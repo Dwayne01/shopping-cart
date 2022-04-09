@@ -33,23 +33,7 @@ app.post('/api/cart', saveCart);
 app.post('/api/auth', authentication);
 
 const PORT = 8080;
-const MONGO_URL = "mongodb+srv://username:fullstack@cluster0.ktsvn.mongodb.net/Cluster0?retryWrites=true&w=majority";
 
 app.listen(PORT); 
 console.log('api runnging on port ' + PORT + ': ');
 
-
-const start = async () => {
-  try {
-    await mongoose.connect(MONGO_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
-    server.listen(port, () => {
-      console.log(`Server is listening to port ${port}`)
-    })
-  } catch (error) {
-    console.log(error)
-  }
-}
-start()
